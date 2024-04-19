@@ -1,0 +1,77 @@
+(tensor) minnie@192-168-1-105 Credit-Card-Fraud-Detection-using-CNN-in-TensorFlow-2.0 % saved_model_cli show --dir 1/ --all     
+
+MetaGraphDef with tag-set: 'serve' contains the following SignatureDefs:
+
+signature_def['__saved_model_init_op']:
+  The given SavedModel SignatureDef contains the following input(s):
+  The given SavedModel SignatureDef contains the following output(s):
+    outputs['__saved_model_init_op'] tensor_info:
+        dtype: DT_INVALID
+        shape: unknown_rank
+        name: NoOp
+  Method name is: 
+
+signature_def['serving_default']:
+  The given SavedModel SignatureDef contains the following input(s):
+    inputs['conv1d_8_input'] tensor_info:
+        dtype: DT_FLOAT
+        shape: (-1, 30, 1)
+        name: serving_default_conv1d_8_input:0
+  The given SavedModel SignatureDef contains the following output(s):
+    outputs['dense_9'] tensor_info:
+        dtype: DT_FLOAT
+        shape: (-1, 1)
+        name: StatefulPartitionedCall:0
+  Method name is: tensorflow/serving/predict
+The MetaGraph with tag set ['serve'] contains the following ops: {'MergeV2Checkpoints', 'MatMul', 'BiasAdd', 'Reshape', 'AddV2', 'NoOp', 'MaxPool', 'StringJoin', 'VarHandleOp', 'Relu', 'Squeeze', 'Select', 'ReadVariableOp', 'Pack', 'ShardedFilename', 'Identity', 'SaveV2', 'ExpandDims', 'Const', 'Conv2D', 'RestoreV2', 'Rsqrt', 'Mul', 'Sub', 'AssignVariableOp', 'Placeholder', 'StatefulPartitionedCall', 'DisableCopyOnRead', 'Sigmoid', 'StaticRegexFullMatch'}
+
+Concrete Functions:
+  Function Name: '__call__'
+    Option #1
+      Callable with:
+        Argument #1
+          conv1d_8_input: TensorSpec(shape=(None, 30, 1), dtype=tf.float32, name='conv1d_8_input')
+        Argument #2
+          DType: bool
+          Value: True
+        Argument #3
+          DType: NoneType
+          Value: None
+    Option #2
+      Callable with:
+        Argument #1
+          conv1d_8_input: TensorSpec(shape=(None, 30, 1), dtype=tf.float32, name='conv1d_8_input')
+        Argument #2
+          DType: bool
+          Value: False
+        Argument #3
+          DType: NoneType
+          Value: None
+
+  Function Name: '_default_save_signature'
+    Option #1
+      Callable with:
+        Argument #1
+          conv1d_8_input: TensorSpec(shape=(None, 30, 1), dtype=tf.float32, name='conv1d_8_input')
+
+  Function Name: 'call_and_return_all_conditional_losses'
+    Option #1
+      Callable with:
+        Argument #1
+          conv1d_8_input: TensorSpec(shape=(None, 30, 1), dtype=tf.float32, name='conv1d_8_input')
+        Argument #2
+          DType: bool
+          Value: True
+        Argument #3
+          DType: NoneType
+          Value: None
+    Option #2
+      Callable with:
+        Argument #1
+          conv1d_8_input: TensorSpec(shape=(None, 30, 1), dtype=tf.float32, name='conv1d_8_input')
+        Argument #2
+          DType: bool
+          Value: False
+        Argument #3
+          DType: NoneType
+          Value: None
